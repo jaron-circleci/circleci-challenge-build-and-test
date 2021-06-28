@@ -8,21 +8,23 @@
 
     <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
 </head>
+
 <div class="jumbotron">
     {% if submitButton %}
-    
+        
     {% else %}
     <h1>{{question}}</h1>
     {% endif %}
 
         <body style="margin-top: 250px; text-align: center;" class="container">
+            {% if not submitButton %}
             <h1>{{circleci_message}}</h1>
-            <form method="POST", action="/process" style="margin-top: 100px;"class="container" method="POST">
-                {% if submitButton %}
+            {% else %}
 
-                {% else %}
-            <button class ="btn btn-lg btn-warning"type="submit" name="Submit" value="Submit">Click for Answer</button>
-                {% endif %}
+            {% endif %}
+
+            <form method="POST", action="/" style="margin-top: 100px;"class="container" method="POST">
+                <button class ="btn btn-lg btn-warning"type="submit" name="Submit" value="Submit">Click for Answer</button>
         </form>
         </body>
 </div>
