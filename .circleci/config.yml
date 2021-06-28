@@ -11,14 +11,9 @@ jobs:
           name: Install Python Dependencies
           command: pip install --user -r requirements.txt
       - run:
-          name: Run Unit Tests
-          command: |
-            pytest --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html
-      - store_test_results:
-          path: test-reports
-      - store_artifacts:
-          path: test-reports
-
+          name: Run Unit Test
+          command: python test.py
+  
 workflows:
   version: 2
   build_test:
