@@ -11,10 +11,11 @@ jobs:
           name: Install Python Dependencies
           command: |
             echo 'export PATH=~$path:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            apt-get install python3
-            apt-get update 
-            apt-get install -y python3-pip 
-            pip install --user -r requirements.txt
+            apt-get install -y sudo
+            sudo apt-get install python3
+            sudo apt-get update 
+            sudo apt-get install -y python3-pip 
+            sudo pip install --user -r requirements.txt
       - run:
           name: Run Unit Tests
           command: |
