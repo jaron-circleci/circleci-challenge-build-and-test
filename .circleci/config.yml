@@ -11,7 +11,7 @@ jobs:
           name: Install Python Dependencies
           command: pip install --user -r requirements.txt
       - run:
-          name: Run Unit Test
+          name: Run Unit Test On Submit Button Text
           command: python test.py
   
 workflows:
