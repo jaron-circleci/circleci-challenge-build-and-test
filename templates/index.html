@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CircleCI Challenge</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
+</head>
+<div class="jumbotron">
+    {% if submitButton %}
+    
+    {% else %}
+    <h1>{{question}}</h1>
+    {% endif %}
+
+        <body style="margin-top: 250px; text-align: center;" class="container">
+            <h1>{{circleci_message}}</h1>
+            <form method="POST", action="/process" style="margin-top: 100px;"class="container" method="POST">
+                {% if submitButton %}
+
+                {% else %}
+            <button class ="btn btn-lg btn-warning"type="submit" name="Submit" value="Submit">Click for Answer</button>
+                {% endif %}
+        </form>
+        </body>
+</div>
+</html>
