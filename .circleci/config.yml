@@ -12,7 +12,7 @@ jobs:
           command: pip install --user -r requirements.txt
       - run:
           name: Run Unit Test
-          command: flask run && python test.py
+          command: pytest
   
 workflows:
   version: 2
